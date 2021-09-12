@@ -25,14 +25,16 @@
         ```
 2. Eclipse 설치 [Download Pages](https://www.eclipse.org/downloads/)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기)
     * 다운로드 받은 파일 실행 후 Eclipse IDE for Java Developers 선택
-      * Java 11+ VM: JRE 15.0.2 선택
-      * Installation Folder: C:\ajava\eclipse 지정 후 INSTALL 선택
+      - Java 11+ VM: JRE 15.0.2 선택
+      - Installation Folder: C:\ajava\eclipse 지정 후 INSTALL 선택
     * 설정
-      - 최초 실행 시 Select a directory as workspace 선택 항목에서 C:\ajava\java-workspace 입력, Use this as the default and do not ask again 선택박스 선택
-      - 이클립스 실행 후 환경 설정
+      * 최초 실행 시
+        - Select a directory as workspace 선택 항목에서 C:\ajava\workspace-java 입력, Use this as the default and do not ask again 선택박스 선택
+      * 이클립스 실행 후 환경 설정
         - Window > Preferences > General > Appearance > Colors and Fonts > Basic > Text Font 선택 후 Edit로 원하는 글꼴 및 크기 선택
         - Window > Preferences > General > Content Types > Java Class File 선택 후 Default encoding에 UTF-8 입력 후 Update 선택
-        - Window > Preferences > General > Content Types > Text 선택 후 Default encoding에 UTF-8 입력 후 Update 선택        
+        - Window > Preferences > General > Content Types > Text 선택 후 Default encoding에 UTF-8 입력 후 Update 선택
+        - Apply and Close 버튼 클릭
 
 3. Android Studio 설치 [Download Pages](https://developer.android.com/studio)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기)
     * 다운로드 받은 파일 실행해서 설치
