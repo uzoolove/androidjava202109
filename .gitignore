@@ -28,6 +28,10 @@ hs_err_pid*
 .classpath
 .project
 
+# etc
+.history/
+ins/
+
 # android
 # android-workspace/.gradle
 # android-workspace/.idea
@@ -41,6 +45,4 @@ hs_err_pid*
 # android-workspace/**/androidTest
 # android-workspace/**/test
 
-# etc
-.history/
-.ins/
+
