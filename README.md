@@ -28,9 +28,9 @@
       - Java 11+ VM: JRE 15.0.2 선택
       - Installation Folder: C:\ajava\eclipse 지정 후 INSTALL 선택
     * 설정
-      * 최초 실행 시
+      * 최초 실행 시 작업 폴더 지정
         - Select a directory as workspace 선택 항목에서 C:\ajava\workspace-java 입력, Use this as the default and do not ask again 선택박스 선택
-      * 이클립스 실행 후 환경 설정
+      * 이클립스 실행 후 폰트/인코딩 설정
         - Window > Preferences > General > Appearance > Colors and Fonts > Basic > Text Font 선택 후 Edit로 원하는 글꼴 및 크기 선택
         - Window > Preferences > General > Content Types > Java Class File 선택 후 Default encoding에 UTF-8 입력 후 Update 선택
         - Window > Preferences > General > Content Types > Text 선택 후 Default encoding에 UTF-8 입력 후 Update 선택
@@ -42,9 +42,11 @@
     * 설정
       - 설치 완료 후 실행
       - Import Android Studio Settings 항목에서 Do not import settings 선택
-      - Android Studio Setup Wizard 진행하면서 Install Type에서 Custom 선택
+      - Android Studio Setup Wizard 진행하면서 Install Type에서 Custom 선택(본 가이드에 없는 선택항목은 Next 선택)
       - Select default JDK Location 항목에서 JAVA_HOME 선택
       - SDK Components Setup 항목에서 Android SDK Location을 C:\ajava\adk로 지정
+        - 폴더 아이콘 클릭
+        - C:\ajava 선택 후 New Folder 아이콘 클릭해서 adk 폴더 생성 후 선택
       - 나머지는 모두 기본 옵션으로 선택 후 완료
 ## 소스코드 공유(본인의 소스코드를 강사에게 공유하고 싶을때)
 1. [Code Share](https://codeshare.io/) 접속(마우스 오른쪽 버튼 > 새 탭에서 링크 열기)
