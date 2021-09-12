@@ -13,7 +13,7 @@
       - 환경 변수 클릭
       - 시스템 변수 항목의 새로 만들기 클릭
       - 변수 이름: JAVA_HOME
-      - 변수 값: c:\ajava\jdk-15.0.2(JDK 압축 해제한 폴더)
+      - 변수 값: c:\ajava\jdk-15.0.2
       - 시스템 변수 항목의 Path 선택 후 편집 클릭
       - %JAVA_HOME%\bin\ 추가
       - 확인 버튼 눌러서 열린창 모두 닫은 후 다음 명령 입력해서 java 버전이 표시되면 정상 완료
@@ -25,7 +25,8 @@
         ```
 2. Eclipse 설치 [Download Pages](https://www.eclipse.org/downloads/)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기)
     * 다운로드 받은 파일 실행 후 Eclipse IDE for Java Developers 선택
-    * Installation Folder: C:\ajava\eclipse 지정 후 INSTALL 선택
+      * Java 11+ VM: JRE 15.0.2 선택
+      * Installation Folder: C:\ajava\eclipse 지정 후 INSTALL 선택
     * 설정
       - 최초 실행 시 Select a directory as workspace 선택 항목에서 C:\ajava\java-workspace 입력, Use this as the default and do not ask again 선택박스 선택
       - 이클립스 실행 후 환경 설정
