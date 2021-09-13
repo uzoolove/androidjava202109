@@ -11,6 +11,10 @@ public class ScoreTest {
 		kim.math = 72;
 		kim.sum = kim.kor + kim.eng + kim.math;
 		kim.avg = kim.sum / 3.0;
+		
+//		kim.math += 10;
+//		kim.sum = kim.kor + kim.eng + kim.math;
+//		kim.avg = kim.sum / 3.0;
 
 		System.out.println("kim 총점: " + kim.sum);
 		System.out.println("kim 평균: " + kim.avg);
