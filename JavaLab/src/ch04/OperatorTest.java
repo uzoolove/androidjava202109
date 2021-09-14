@@ -15,9 +15,9 @@ public class OperatorTest {
 		boolean b1 = true;
 		boolean b2 = false;
 		
-		System.out.println(b);
-		System.out.println(s);
-		System.out.println(i);
+		System.out.print(b);
+		System.out.print(s);
+		System.out.print(i);
 		System.out.println(l);
 		System.out.println(f);
 		System.out.println(d);
@@ -39,7 +39,44 @@ public class OperatorTest {
 }
 
 
-
+//class System{
+//	public static PrintStream out = new PrintStream();
+//}
+//
+//class PrintStream{
+//	public void println() {
+//		
+//	}
+//	public void println(int msg) {
+//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		// ......
+//	}
+//	public void println(float msg) {
+//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		// ......
+//	}
+//	public void println(double msg) {
+//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		// ......
+//	}
+//	public void println(boolean msg) {
+//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		// ......
+//	}
+//	public void println(String msg) {
+//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		// ......
+//	}
+//	public void println(Object msg) {
+//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		// ......
+//	}
+//	public void print(int msg) {
+//		// 표준출력장치에 msg를 출력한다.
+//		// ......
+//	}
+//	// ......
+//}
 
 
 
