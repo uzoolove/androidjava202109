@@ -8,7 +8,7 @@ public class ScoreTest2 {
 		Score2 kim = new Score2();
 		kim.kor = 100;
 		kim.eng = 90;
-		kim.math = 72;		
+		kim.math = 72;
 		
 		kim.math += 10;
 
