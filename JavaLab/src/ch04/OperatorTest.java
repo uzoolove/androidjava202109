@@ -68,7 +68,8 @@ public class OperatorTest {
 //		// ......
 //	}
 //	public void println(Object msg) {
-//		// 표준출력장치에 msg를 출력하고 줄바꿈 기호 추가.
+//		String str = msg.toString();
+//		// 표준출력장치에 str을 출력하고 줄바꿈 기호 추가.
 //		// ......
 //	}
 //	public void print(int msg) {

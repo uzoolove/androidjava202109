@@ -7,7 +7,16 @@ public class Daughter extends Parent {
 	}
 	
 	public void play() {
+		makeup();
 		System.out.println(name + ": 클럽에 간다.");
+	}
+	
+	private void makeup() {
+		System.out.println(name + ": 화장한다.");
+	}
+	
+	public void study() {
+		System.out.println(name + ": 과외한다.");
 	}
 
 }
