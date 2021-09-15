@@ -9,7 +9,7 @@ public class Test {
 		
 		dailyPlan(p);		
 		
-		Gamer f = new SonFriend();
+		SonFriend f = new SonFriend();
 		playGame(f);
 	}
 	
