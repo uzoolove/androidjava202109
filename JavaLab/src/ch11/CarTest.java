@@ -20,47 +20,50 @@ public class CarTest {
 		if(c instanceof Tank) {
 			((Tank)c).shoot();
 		}else {
-			System.out.println("벽을 돌아간다.");
+			System.out.println("벽을 돌아감");
 		}
-		
 		System.out.println("흙더미를 만났다.");
 		if(c instanceof Fork) {
 			((Fork)c).fork();
 		}else {
-			System.out.println("흙더미를 돌아간다.");
+			System.out.println("흙더미를 돌아감");
 		}
 		
 		c.stop();
-		System.out.println();
+		System.out.println("");
 	}
 }
-class Car{
+class Car {
 	void start() {
-		System.out.println("출발.");
+		System.out.println("출발");
 	}
 	void drive() {
-		System.out.println("운전.");
+		System.out.println("운전");
 	}
 	void stop() {
-		System.out.println("정지.");
+		System.out.println("정지");
 	}
 }
 class OpenCar extends Car{
 	void open() {
-		System.out.println("open.");
+		System.out.println("open");
+
 	}
 	void close() {
-		System.out.println("close.");
+		System.out.println("close");
+		
 	}
 	void start() {
 		open();
 		super.start();
+	
 	}
 	void stop() {
 		super.stop();
 		close();
 	}
 }
+
 interface Tank{
 	void shoot();
 }
@@ -69,17 +72,15 @@ interface Fork{
 }
 class MyCar extends OpenCar implements Tank{
 	public void shoot() {
-		System.out.println("포를 쏜다.");
+		System.out.println("포를 쏜다");
 	}
 }
 class MyCar2 extends Car implements Tank, Fork{
 	public void shoot() {
-		System.out.println("포를 쏜다.");
+		System.out.println("포를 쏜다");
 	}
 	public void fork() {
-		System.out.println("흙더미를 치운다.");
+		System.out.println("흙더미를 치우다");
 	}
+	
 }
-
-
-
