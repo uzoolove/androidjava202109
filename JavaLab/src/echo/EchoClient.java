@@ -1,19 +1,23 @@
 package echo;
 
 import java.net.Socket;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 public class EchoClient {
 	private Socket s;
-	private InputStream in;		// 서버로부터 읽는다.
-	private OutputStream out;	// 서버로 보낸다.
-	private InputStream key;	// 키보드로부터 읽는다.
+	private BufferedReader fromServer;		// 서버로부터 읽는다.
+	private PrintWriter toServer;	// 서버로 보낸다.
+	private BufferedReader key;	// 키보드로부터 읽는다.
 
 	// 객체 생성 후 호출할 메소드
 	private void onCreate() {
-		final String SERVER = "localhost:1234";
+		final String SERVER = "localhost:8212";
 		final String NICKNAME = "김철수";
 		connect(SERVER, NICKNAME);
 	}
@@ -33,21 +37,21 @@ public class EchoClient {
 			System.out.println("서버에 접속 완료.");
 			
 			// 소켓에서 입출력 스트림 생성
-			in = s.getInputStream();
-			out = s.getOutputStream();
+			fromServer = new BufferedReader(new InputStreamReader(s.getInputStream(), "UTF-8"));
+			toServer = new PrintWriter(new OutputStreamWriter(s.getOutputStream(), "UTF-8"), true);
 			
 			// 키보드에서 입력한 문자를 꺼내기 위한 입력 스트림 생성
-			key = System.in;
+			key = new BufferedReader(new InputStreamReader(System.in));
 			
 			// 키보드에서 입력한 데이터를 출력 스트림으로 전송
-			int readData = 0;
-			while((readData = key.read()) != -1) {
-				out.write(readData);
+			String readData = "";
+			while((readData = key.readLine()) != null) {
+				toServer.println(readData);
 				
 				// 서버로부토 받은 데이터 출력
-				int recvData = 0;
-				recvData = in.read();
-				System.out.write(recvData);
+				String recvData = "";
+				recvData = fromServer.readLine();
+				System.out.println(recvData);
 			}
 
 		}catch(Exception e){

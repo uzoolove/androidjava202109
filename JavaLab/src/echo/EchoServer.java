@@ -11,25 +11,25 @@ public class EchoServer {
 	private ServerSocket ss;
 	private Socket s;
 	private BufferedReader in;
-	private PrintWriter out;
+	private PrintWriter toClient;
 
 	private void startServer() {
 		try {
 			// 서버소켓 생성
-			ss = new ServerSocket(1234);
-			System.out.println("서버 구동 완료. 1234");
+			ss = new ServerSocket(8212);
+			System.out.println("서버 구동 완료. 8212");
 			// 클라이언트 접속 대기
 			s = ss.accept();
 			System.out.println("클라이언트 접속. " + s.getInetAddress().getHostAddress());
 
 			// 소켓에서 입출력 스트림 생성
 			in = new BufferedReader(new InputStreamReader(s.getInputStream(), "UTF-8"));
-			out = new PrintWriter(new OutputStreamWriter(s.getOutputStream(), "UTF-8"));
+			toClient = new PrintWriter(new OutputStreamWriter(s.getOutputStream(), "UTF-8"), true);
 			// 입력 스트림에서 읽고 출력 스트림으로 전송한다.
-			int readData = 0;
-			while((readData = in.read()) != -1) {
-				System.out.write(readData);
-				out.write(readData);
+			String readData = "";
+			while((readData = in.readLine()) != null) {
+				System.out.println(readData);
+				toClient.println(readData);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
