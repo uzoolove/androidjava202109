@@ -16,7 +16,7 @@ public class ChatClient {
 	private void onCreate() {
 //		final String SERVER = "localhost:8212";
 		final String SERVER = "chat.awsins.shop:8212";
-		final String NICKNAME = "김철수";
+		final String NICKNAME = "김철수222";
 		connect(SERVER, NICKNAME);
 	}
 
