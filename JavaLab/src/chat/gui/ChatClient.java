@@ -47,6 +47,8 @@ public class ChatClient {
 		frame = new JFrame("멀티챗");
 		
 		msgOut = new JTextArea("멀티챗에 오신걸 환영합니다.\n", 10, 30);
+		msgOut.setLineWrap(true);
+		msgOut.setEditable(false);
 		scroller = new JScrollPane(msgOut
 								, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED
 								, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -62,6 +64,7 @@ public class ChatClient {
 		frame.setSize(400, 300);
 		frame.setLocation(600, 300);
 		frame.setVisible(true);
+		msgInput.requestFocus();
 	}
 	
 	// 이벤트 등록
@@ -98,31 +101,15 @@ public class ChatClient {
 			// 소켓에서 입출력 스트림 생성
 			fromServer = new BufferedReader(new InputStreamReader(s.getInputStream(), "UTF-8"));
 			toServer = new PrintWriter(new OutputStreamWriter(s.getOutputStream(), "UTF-8"), true);
-			
-			// 키보드에서 입력한 문자를 꺼내기 위한 입력 스트림 생성
-			key = new BufferedReader(new InputStreamReader(System.in));
-			
+
 			// 로그인 요청
 			sendMsg("login " + nickname);
-			
-			new Thread() {
-				public void run() {
-					try {
-						// 키보드에서 입력한 데이터를 출력 스트림으로 전송
-						String readData = "";
-						while((readData = key.readLine()) != null) {
-							sendMsg(readData);
-						}
-					}catch(Exception e) {
-						e.printStackTrace();
-					}
-				}
-			}.start();
 			
 			// 서버로부토 받은 데이터 출력
 			String recvData = "";				
 			while((recvData = fromServer.readLine()) != null) {
-				System.out.println(recvData);
+				msgOut.append(recvData + "\n");
+				msgOut.setCaretPosition(msgOut.getDocument().getLength());
 			}
 
 		}catch(Exception e){
