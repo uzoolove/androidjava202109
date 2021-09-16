@@ -14,7 +14,8 @@ public class EchoClient {
 
 	// 객체 생성 후 호출할 메소드
 	private void onCreate() {
-		final String SERVER = "localhost:8212";
+//		final String SERVER = "localhost:8212";
+		final String SERVER = "chat.awsins.shop:8212";
 		final String NICKNAME = "김철수";
 		connect(SERVER, NICKNAME);
 	}
