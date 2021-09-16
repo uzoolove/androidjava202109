@@ -2,6 +2,8 @@ package ch14;
 
 import java.util.Arrays;
 
+import ch05.Score6;
+
 public class ArrayTest {
 
 	public static void main(String[] args) {
@@ -33,6 +35,38 @@ public class ArrayTest {
 			System.out.println(num);
 		}
 		
+		// Score 객체를 저장할 배열
+		Score6[] scores = new Score6[3];
+		scores[0] = new Score6(100, 90, 80);
+		scores[1] = new Score6(89, 88, 89);
+		scores[2] = new Score6(90, 78, 56);
+		
+		for(Score6 score : scores) {
+			System.out.println(score.avg());
+		}
+		
+		try {
+			// 새로운 Score 객체 추가
+			scores[3] = new Score6(45, 87, 90);
+		}catch(ArrayIndexOutOfBoundsException e) {
+			Score6[] tmp = new Score6[(int)(scores.length*1.5)];
+			for(int i=0; i<scores.length; i++) {
+				tmp[i] = scores[i];
+			}
+			scores = tmp;
+			scores[3] = new Score6(45, 87, 90);
+		}
+		
+		System.out.println(Arrays.toString(scores));
 	}
 
 }
+
+
+
+
+
+
+
+
+
