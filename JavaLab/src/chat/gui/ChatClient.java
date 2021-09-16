@@ -1,6 +1,8 @@
 package chat.gui;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -37,7 +39,7 @@ public class ChatClient {
 //		final String SERVER = "localhost:8212";
 		final String SERVER = "chat.awsins.shop:8212";
 		final String NICKNAME = "김철수222";
-//		connect(SERVER, NICKNAME);
+		connect(SERVER, NICKNAME);
 	}
 	
 	// 화면 구성
@@ -66,6 +68,17 @@ public class ChatClient {
 	private void setEvent() {
 		// x 버튼 클릭
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		ActionListener listener = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String msg = msgInput.getText();
+				sendMsg(msg);
+				msgInput.setText("");
+				msgInput.requestFocus();
+			}
+		};
+		sendBtn.addActionListener(listener);		
+		msgInput.addActionListener(listener);
 	}
 
 	// 서버에 메세지 전송
