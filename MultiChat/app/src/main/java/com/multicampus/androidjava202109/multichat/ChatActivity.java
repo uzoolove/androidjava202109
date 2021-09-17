@@ -2,10 +2,13 @@ package com.multicampus.androidjava202109.multichat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
@@ -19,6 +22,7 @@ public class ChatActivity extends AppCompatActivity {
     private Socket s;
     private BufferedReader fromServer;		// 서버로부터 읽는다.
     private PrintWriter toServer;	// 서버로 보낸다.
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,13 @@ public class ChatActivity extends AppCompatActivity {
 
         setView();
         setEvent();
+
+        handler = new Handler(){
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                msgOut.append(msg.getData().getString("recvData") + "\n");
+            }
+        };
 
         new Thread(){
             public void run(){
@@ -95,7 +106,11 @@ public class ChatActivity extends AppCompatActivity {
             // 서버로부토 받은 데이터 출력
             String recvData = "";
             while((recvData = fromServer.readLine()) != null) {
-                msgOut.append(recvData + "\n");
+                Bundle bundle = new Bundle();
+                bundle.putString("recvData", recvData);
+                Message msg = handler.obtainMessage();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
             }
 
         }catch(Exception e){
