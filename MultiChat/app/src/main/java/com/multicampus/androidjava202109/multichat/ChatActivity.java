@@ -65,6 +65,18 @@ public class ChatActivity extends AppCompatActivity {
         sendBtn = findViewById(R.id.sendBtn);
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        sendMsg("자리비움...");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        sendMsg("돌아옴...");
+    }
+
     // 이벤트 등록
     private void setEvent() {
         sendBtn.setOnClickListener(new View.OnClickListener() {

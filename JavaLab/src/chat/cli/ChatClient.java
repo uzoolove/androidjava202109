@@ -19,6 +19,8 @@ public class ChatClient {
 		final String NICKNAME = "김철수222";
 		connect(SERVER, NICKNAME);
 	}
+	
+
 
 	// 서버에 메세지 전송
 	private void sendMsg(String msg){
