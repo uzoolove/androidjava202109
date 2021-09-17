@@ -20,7 +20,6 @@ public class ChatClient {
 	private Socket s;
 	private BufferedReader fromServer;		// 서버로부터 읽는다.
 	private PrintWriter toServer;	// 서버로 보낸다.
-	private BufferedReader key;	// 키보드로부터 읽는다.
 
 	// 윈도우창
 	private JFrame frame;	
